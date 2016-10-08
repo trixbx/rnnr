@@ -315,7 +315,7 @@ if(time()-filectime($cgiref)>60)
 <?
 $zsgfile="z".time().uniqid().".cgi";
 $getcom = $_POST["now"];
-$nwzsg = "ID= ".$_SERVER['REMOTE_ADDR']."..TM=".time()."..MSG= ".htmlspecialchars($getcom).PHP_EOL;
+$nwzsg = htmlspecialchars($getcom)."_ID=".$_SERVER['REMOTE_ADDR']."_TM=".time().PHP_EOL;
 file_put_contents($zsgfile, $nwzsg);
 ?>
 
